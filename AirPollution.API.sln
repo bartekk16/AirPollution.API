@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirPollution.API", "AirPollution.API\AirPollution.API.csproj", "{29500F55-CF8C-47F8-8A08-CE84C5F13995}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29500F55-CF8C-47F8-8A08-CE84C5F13995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29500F55-CF8C-47F8-8A08-CE84C5F13995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29500F55-CF8C-47F8-8A08-CE84C5F13995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29500F55-CF8C-47F8-8A08-CE84C5F13995}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39568014-D925-4120-88B4-F6E116356F91}
+	EndGlobalSection
+EndGlobal
