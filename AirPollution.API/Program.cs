@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 //}
 
 builder.Services.AddSingleton<IHomeService, HomeService>();
+builder.Services.AddSingleton<IWeatherService, WeatherService>();
 //builder.Services.AddControllers();
 builder.Services.AddControllersWithViews();
 
