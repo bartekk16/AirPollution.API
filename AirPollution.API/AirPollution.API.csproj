@@ -7,11 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="IronPython" Version="2.7.12" />
+    <PackageReference Include="IronPython.StdLib" Version="2.7.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="python" Version="3.11.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Python.Runtime">
+      <HintPath>..\..\..\pythonnet-master\pythonnet\runtime\Python.Runtime.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
