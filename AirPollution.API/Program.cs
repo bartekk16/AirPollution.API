@@ -1,4 +1,6 @@
 using AirPollution.API.Services;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<IHomeService, HomeService>();
 builder.Services.AddSingleton<IWeatherService, WeatherService>();
+builder.Services.Configure<FormOptions>(o =>
+{
+    o.ValueLengthLimit = int.MaxValue;
+    o.MultipartBodyLengthLimit = int.MaxValue;
+    o.MemoryBufferThreshold = int.MaxValue;
+});
 //builder.Services.AddControllers();
 builder.Services.AddControllersWithViews();
 
@@ -31,6 +39,13 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+
+app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory())),
+    RequestPath = new PathString("")
+});
 
 app.UseAuthorization();
 

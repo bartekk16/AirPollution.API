@@ -15,7 +15,7 @@ namespace AirPollution.API.Services
         {
 
             RunPython();
-            Thread.Sleep(1000);
+            
             List<string> coefs = new List<string>();
             coefs = ReadFromCsv();
             var format = new NumberFormatInfo();
@@ -64,7 +64,8 @@ namespace AirPollution.API.Services
         private List<string> ReadFromCsv()
         {
             List<string> listA = new List<string>();
-            using (var reader = new StreamReader(@"C:\Users\1234\OneDrive\Praca inżynierska\Apka Pytong\coefs.csv"))
+            //using (var reader = new StreamReader(@"C:\Users\1234\OneDrive\Praca inżynierska\Apka Pytong\coefs.csv"))
+            using (var reader = new StreamReader(@"coefs.csv"))
             {
 
                 while (!reader.EndOfStream)
@@ -84,13 +85,16 @@ namespace AirPollution.API.Services
 
         private void RunPython()
         {
-            string navigate = @"C:\\Users\\1234\\OneDrive\\Praca inżynierska\\Apka Pytong";
+            //string navigate = @"C:\\Users\\1234\\OneDrive\\Praca inżynierska\\Apka Pytong";
             ProcessStartInfo ps = new ProcessStartInfo();
-            ps.WorkingDirectory = navigate;
+            ps.WorkingDirectory = Directory.GetCurrentDirectory();
             ps.FileName = "cmd.exe";
-            ps.Arguments = "/C Testy_PythonNet.exe";
+            ps.Arguments = "/C PythonNet.exe";
             //ps.CreateNoWindow = true;
-            Process.Start(ps);
+            Process run = Process.Start(ps);
+            Thread.Sleep(1000);
+            run.Kill();
+
 
         }
             
