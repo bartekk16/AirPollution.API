@@ -5,14 +5,7 @@ using Microsoft.Extensions.FileProviders;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-//void ConfigureServices(IServiceCollection services)
-//{
-//    services.AddSingleton
 
-//    services.AddControllersWithViews();
-//}
-
-builder.Services.AddSingleton<IHomeService, HomeService>();
 builder.Services.AddSingleton<IWeatherService, WeatherService>();
 builder.Services.Configure<FormOptions>(o =>
 {
@@ -20,7 +13,6 @@ builder.Services.Configure<FormOptions>(o =>
     o.MultipartBodyLengthLimit = int.MaxValue;
     o.MemoryBufferThreshold = int.MaxValue;
 });
-//builder.Services.AddControllers();
 builder.Services.AddControllersWithViews();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

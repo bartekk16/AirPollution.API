@@ -37,7 +37,6 @@ namespace AirPollution.API.Services
             var m = Double.Parse(coefs[12], format);
             var n = Double.Parse(coefs[13], format);
             var o = Double.Parse(coefs[14], format);
-            //var x = Convert.ToDouble(coefs[0]);
             for (int i = 0; i < weather.Count; i++)
             {
                 var pollution = a + b * weather[i].Temperature + c * weather[i].Humidity +
@@ -47,13 +46,6 @@ namespace AirPollution.API.Services
                    k * weather[i].Humidity * weather[i].WindSpeed + l * weather[i].Humidity * weather[i].Pressure +
                    m * weather[i].WindSpeed * weather[i].WindSpeed + n * weather[i].WindSpeed * weather[i].Pressure +
                    o * weather[i].Pressure * weather[i].Pressure;
-                //var pollution2 = 5024.301412231013 - 7.339425651482356 * weather[i].Temperature + 10.263605859685386 * weather[i].Humidity +
-                //   2.0820297529109673 * weather[i].WindSpeed - 10.855031734371348 * weather[i].Pressure + 0.03213986421118295 * weather[i].Temperature * weather[i].Temperature -
-                //   0.025099344879074614 * weather[i].Temperature * weather[i].Humidity + 0.06681425395830656 * weather[i].Temperature * weather[i].WindSpeed +
-                //   0.006129988781735207 * weather[i].Temperature * weather[i].Pressure + 0.005267615168560225 * weather[i].Humidity * weather[i].Humidity -
-                //   0.011370299638924747 * weather[i].Humidity * weather[i].WindSpeed - 0.010215669240611014 * weather[i].Humidity * weather[i].Pressure +
-                //   0.02217828630041639 * weather[i].WindSpeed * weather[i].WindSpeed - 0.0034355757843065327 * weather[i].WindSpeed * weather[i].Pressure +
-                //   0.005861825184940717 * weather[i].Pressure * weather[i].Pressure;
                 weather[i].AirPollution = Math.Round(pollution, 2);
 
             }
@@ -64,7 +56,6 @@ namespace AirPollution.API.Services
         private List<string> ReadFromCsv()
         {
             List<string> listA = new List<string>();
-            //using (var reader = new StreamReader(@"C:\Users\1234\OneDrive\Praca inżynierska\Apka Pytong\coefs.csv"))
             using (var reader = new StreamReader(@"coefs.csv"))
             {
 
@@ -85,12 +76,10 @@ namespace AirPollution.API.Services
 
         private void RunPython()
         {
-            //string navigate = @"C:\\Users\\1234\\OneDrive\\Praca inżynierska\\Apka Pytong";
             ProcessStartInfo ps = new ProcessStartInfo();
             ps.WorkingDirectory = Directory.GetCurrentDirectory();
             ps.FileName = "cmd.exe";
             ps.Arguments = "/C PythonNet.exe";
-            //ps.CreateNoWindow = true;
             Process run = Process.Start(ps);
             Thread.Sleep(1000);
             run.Kill();

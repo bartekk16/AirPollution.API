@@ -17,7 +17,6 @@ namespace AirPollution.API.Controllers
             try
             {
                 var file = Request.Form.Files[0];
-                //var folderName = Path.Combine("Resources", "Images");
                 var pathToSave = Path.Combine(Directory.GetCurrentDirectory());
                 if (file.Length > 0)
                 {

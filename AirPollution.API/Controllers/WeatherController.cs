@@ -21,9 +21,5 @@ namespace AirPollution.API.Controllers
             return _weatherService.ProcesWeather(weather);
         }
 
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
     }
 }
