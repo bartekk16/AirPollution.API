@@ -20,7 +20,8 @@ This is a backend API built with .NET Core 6 that integrates weather forecast an
 2. Install .Net 6.0
 3. Open project
 4. Run in terminal:
-	```bash dotnet build
+	```bash
+ 	dotnet build
 	dotnet run```
 5. Visit `http://localhost:5000`
 
