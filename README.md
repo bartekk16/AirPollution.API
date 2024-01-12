@@ -16,13 +16,15 @@ This is a backend API built with .NET Core 6 that integrates weather forecast an
 
    ```bash
    git clone https://github.com/your-username/your-repository.git
-   cd your-repository```
+   cd your-repository
+   ```
 2. Install .Net 6.0
 3. Open project
 4. Run in terminal:
-	```bash
- 	dotnet build
-	dotnet run```
+```bash
+dotnet build
+dotnet run
+ ```
 5. Visit `http://localhost:5000`
 
 
