@@ -43,9 +43,9 @@ Submit a POST request to the `/api/Weather` endpoint, providing a list of histor
     "AirPollution": 15.3,
     "Humidity": 65.0
   },
-  // Add more entries as needed
-]```
-
+  // etc
+]
+```
 Example:
 
 ```bash
